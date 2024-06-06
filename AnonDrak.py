@@ -38,8 +38,8 @@ def grab_defacer_net(first_page, last_page):
                         domain_name = '.'.join(domain_parts[-3:])
                 if domain_name not in urls:
                     urls.append(domain_name)
-                    print('\n\t\t[+] Grabbed : {}'.format(domain_name))
-    with open('Grabbed.txt', 'w') as file:
+                    print('\n\t\t[+] site : {}'.format(domain_name))
+    with open('datasite.txt', 'w') as file:
         for url in urls:
             file.write(url + '\n')
     print('\n\t\t[!] MaVanNam WAS HERE [!]')
@@ -62,7 +62,7 @@ def grab_wordpress_themes(themename, themepages):
             domains = re.findall(r'<p style="margin-bottom: 20px">(.*?)</p>', test.content.decode('utf-8'))
             with open('Grabbed.txt', 'a') as file:
                 for domain in domains:
-                    print('\n\t\t[+] Grabbed : ' + domain)
+                    print('\n\t\t[+] site : ' + domain)
                     file.write('http://' + domain + '\n')
 
 def grab_zone_xsec(first_page, last_page):
@@ -88,8 +88,8 @@ def grab_zone_xsec(first_page, last_page):
                         domain_name = '.'.join(domain_parts[-3:])
                 if domain_name not in urls:
                     urls.append(domain_name)
-                    print('\n\t\t[+] Grabbed : {}'.format(domain_name))
-    with open('Grabbed.txt', 'w') as file:
+                    print('\n\t\t[+] site : {}'.format(domain_name))
+    with open('datasite.txt', 'w') as file:
         for url in urls:
             file.write(url + '\n')
     print('\n\t\t[!] MaVanNam WAS HERE [!]')
